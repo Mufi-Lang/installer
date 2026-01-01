@@ -257,29 +257,29 @@ get_current_version() {
 
 get_target() {
     if [ "$OS" = "Windows_NT" ]; then
-        echo "x86_64-pc-windows-msvc"
+        echo "x86_64-windows"
         return
     fi
 
     case $(uname -sm) in
-        "Darwin x86_64") echo "x86_64-apple-darwin" ;;
-        "Darwin arm64") echo "aarch64-apple-darwin" ;;
+        "Darwin x86_64") echo "x86_64-macos" ;;
+        "Darwin arm64") echo "aarch64-macos" ;;
         "Linux aarch64")
             if grep -q "ID=alpine" "/etc/os-release" 2>/dev/null; then
                 echo "aarch64-linux-musl"
             else
-                echo "aarch64-linux-gnu"
+                echo "aarch64-linux"
             fi ;;
         "Linux armv6l") echo "arm-linux-gnueabihf" ;;
-        "Linux armv7l") echo "armv7-linux-gnueabihf" ;;
-        "Linux s390x") echo "s390x-linux-gnu" ;;
-        "Linux ppc64le") echo "powerpc64le-linux-gnu" ;;
-        "Linux riscv64") echo "riscv64-linux-gnu" ;;
+        "Linux armv7l") echo "arm-linux-gnueabihf" ;;
+        "Linux s390x") echo "s390x-linux" ;;
+        "Linux ppc64le") echo "powerpc64le-linux" ;;
+        "Linux riscv64") echo "riscv64-linux" ;;
         *)
             if grep -q "ID=alpine" "/etc/os-release" 2>/dev/null; then
                 echo "x86_64-linux-musl"
             else
-                echo "x86_64-linux-gnu"
+                echo "x86_64-linux"
             fi ;;
     esac
 }
@@ -587,13 +587,12 @@ normal_cleanup() {
 
 main() {
     print_banner
-    check_root
 
     case "$1" in
-        "install") cmd_install ;;
-        "update") cmd_update ;;
-        "remove") cmd_remove ;;
-        "install-version") cmd_install_version "$2" ;;
+        "install") check_root; cmd_install ;;
+        "update") check_root; cmd_update ;;
+        "remove") check_root; cmd_remove ;;
+        "install-version") check_root; cmd_install_version "$2" ;;
         "list-versions") cmd_list_versions ;;
         *) print_usage; exit 1 ;;
     esac
