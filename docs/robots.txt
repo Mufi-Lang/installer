@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mufi-lang.github.io/installer/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow crawling of specific files if needed
+# Disallow: /private/
+
+# Allow all search engines to index the installer script
+Allow: /installer.sh
+
+# SEO optimization
+# Allow indexing of main pages
+Allow: /index.html
+Allow: /style.css
+Allow: /script.js
+
+# Host information
+Host: mufi-lang.github.io

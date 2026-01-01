@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --accent-color: #0f172a;
+    --bg-color: #ffffff;
+    --surface-color: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --code-bg: #1e293b;
+    --code-text: #e2e8f0;
+    --success-color: #059669;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-color);
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+main {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.install-section {
+    margin-bottom: 3rem;
+}
+
+.install-command {
+    background: var(--code-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 0 auto 1rem;
+    max-width: 800px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.command-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.platform-indicator {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background: var(--surface-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+    background: var(--primary-hover);
+}
+
+.copy-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+#install-command {
+    display: block;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 1rem;
+    color: var(--code-text);
+    background: none;
+    border: none;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    user-select: all;
+}
+
+.install-note {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: var(--surface-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.install-note p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.feature p {
+    color: var(--text-secondary);
+}
+
+.usage {
+    margin-bottom: 4rem;
+}
+
+.usage h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.usage-item {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.usage-item:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.usage-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.usage-item code {
+    display: block;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-size: 0.875rem;
+    background: var(--code-bg);
+    color: var(--code-text);
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    word-wrap: break-word;
+}
+
+.usage-item p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.download-section {
+    text-align: center;
+    background: var(--surface-color);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.download-section h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.download-section p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.download-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-btn,
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+}
+
+.download-btn {
+    background: var(--success-color);
+    color: white;
+}
+
+.download-btn:hover {
+    background: #047857;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.github-btn {
+    background: var(--accent-color);
+    color: white;
+}
+
+.github-btn:hover {
+    background: #334155;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+footer p {
+    margin-bottom: 0.25rem;
+}
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--success-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    font-weight: 500;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .logo h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.125rem;
+    }
+
+    .install-command {
+        padding: 1rem;
+    }
+
+    .command-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+
+    #install-command {
+        font-size: 0.875rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .usage-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .download-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-btn,
+    .github-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .toast {
+        right: 1rem;
+        left: 1rem;
+        transform: translateY(100px);
+    }
+
+    .toast.show {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.75rem;
+    }
+
+    .feature,
+    .usage-item {
+        padding: 1.25rem;
+    }
+
+    .download-section {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Focus styles for accessibility */
+.copy-btn:focus,
+.download-btn:focus,
+.github-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection styles */
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Loading animation for copy button */
+.copy-btn.copying {
+    background: var(--success-color);
+}
+
+.copy-btn.copying::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

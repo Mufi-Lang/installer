@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - MufiZ Installer</title>
+    <meta name="description" content="Page not found. Return to the MufiZ installer homepage.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .error-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--surface-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--border-color);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-message {
+                font-size: 1.25rem;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+            <div class="logo">
+                <h1>MufiZ</h1>
+                <span class="tagline">The Official Installer</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="error-container">
+                <div class="error-code">404</div>
+                <h1 class="error-message">Page Not Found</h1>
+                <p class="error-description">
+                    The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+                </p>
+
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                        Go Home
+                    </a>
+                    <a href="installer.sh" class="btn btn-secondary" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Installer
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 MoKa Reads. All rights reserved. GPL v2.0 license.</p>
+            <p>MufiZ Programming Language - Official Installer</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate the 404 code
+            const errorCode = document.querySelector('.error-code');
+            errorCode.style.opacity = '0';
+            errorCode.style.transform = 'scale(0.8)';
+
+            setTimeout(() => {
+                errorCode.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                errorCode.style.opacity = '1';
+                errorCode.style.transform = 'scale(1)';
+            }, 100);
+
+            // Track 404 errors (for analytics)
+            if ('gtag' in window) {
+                gtag('event', 'page_view', {
+                    page_title: '404 - Page Not Found',
+                    page_location: window.location.href
+                });
+            }
+        });
+    </script>
+</body>
+</html>

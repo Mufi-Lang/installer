@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MufiZ - The Official Installer</title>
+    <meta name="description" content="The official installer for the MufiZ programming language. Install MufiZ quickly and easily with a single command.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>MufiZ</h1>
+                <span class="tagline">The Official Installer</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Install MufiZ Programming Language</h2>
+                <p class="subtitle">Get started with MufiZ in seconds. Install, update, and manage your MufiZ installation with ease.</p>
+
+                <div class="install-section">
+                    <div class="install-command">
+                        <div class="command-header">
+                            <span class="platform-indicator">Unix/Linux/macOS</span>
+                            <button class="copy-btn" onclick="copyCommand()" title="Copy to clipboard">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="m5 15-4-4v10h10l-4-4-2-2z"></path>
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                        <code id="install-command">curl -fsSL https://mufi-lang.github.io/installer/installer.sh | sudo sh -s install</code>
+                    </div>
+
+                    <div class="install-note">
+                        <p><strong>Note:</strong> This will install both MufiZ and mufizup (the MufiZ installer and version manager).</p>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <h3>🚀 Quick Installation</h3>
+                        <p>Install MufiZ with a single command</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🔄 Easy Updates</h3>
+                        <p>Keep your MufiZ installation up to date</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🗑️ Clean Removal</h3>
+                        <p>Uninstall completely when needed</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="usage">
+                <h2>Usage</h2>
+                <div class="usage-grid">
+                    <div class="usage-item">
+                        <h4>Install MufiZ</h4>
+                        <code>sudo mufizup install</code>
+                        <p>Install the latest version of MufiZ</p>
+                    </div>
+                    <div class="usage-item">
+                        <h4>Update MufiZ</h4>
+                        <code>sudo mufizup update</code>
+                        <p>Update to the latest version</p>
+                    </div>
+                    <div class="usage-item">
+                        <h4>Remove MufiZ</h4>
+                        <code>sudo mufizup remove</code>
+                        <p>Completely uninstall MufiZ and mufizup</p>
+                    </div>
+                    <div class="usage-item">
+                        <h4>Install Specific Version</h4>
+                        <code>sudo mufizup install-version 1.0.0</code>
+                        <p>Install a specific version of MufiZ</p>
+                    </div>
+                    <div class="usage-item">
+                        <h4>List Available Versions</h4>
+                        <code>sudo mufizup list-versions</code>
+                        <p>Show all available MufiZ versions</p>
+                    </div>
+                    <div class="usage-item">
+                        <h4>Show Help</h4>
+                        <code>mufizup --help</code>
+                        <p>Display usage information</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="download-section">
+                <h2>Alternative Installation</h2>
+                <p>If you prefer to download the installer script manually:</p>
+                <div class="download-options">
+                    <a href="installer.sh" class="download-btn" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download installer.sh
+                    </a>
+                    <a href="https://github.com/Mufi-Lang/installer" class="github-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 MoKa Reads. All rights reserved. GPL v2.0 license.</p>
+            <p>MufiZ Programming Language - Official Installer</p>
+        </footer>
+    </div>
+
+    <div class="toast" id="toast">
+        <span>Command copied to clipboard!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

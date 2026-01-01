@@ -1,0 +1,63 @@
+# GitHub Pages configuration for MufiZ installer website
+
+# Site settings
+title: "MufiZ - The Official Installer"
+description: "The official installer for the MufiZ programming language. Install MufiZ quickly and easily with a single command."
+baseurl: ""
+url: "https://mufi-lang.github.io"
+
+# Repository info
+repository: "Mufi-Lang/installer"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
+# GitHub Pages specific settings
+github:
+  repository_nwo: Mufi-Lang/installer
+
+# SEO settings
+author: MoKa Reads
+twitter:
+  username:
+  card: summary_large_image
+
+# Social links
+social_links:
+  - https://github.com/Mufi-Lang
+
+# Collections
+collections_dir: collections
+
+# Sass configuration
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Performance optimizations
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
+  blanklines: false
+  profile: false
