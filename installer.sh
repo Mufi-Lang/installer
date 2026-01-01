@@ -383,18 +383,36 @@ install_mufiz() {
     }
 
     print_step "Installing mufizup manager"
-    if ! cp "$0" "$bin_dir/mufizup"; then
-        print_error "Failed to install mufizup manager"
-        # Don't exit here as main binary is installed
-        print_warning "MufiZ installed but mufizup manager installation failed"
-        return 0
+    local script_path="$0"
+    local target_path="$bin_dir/mufizup"
+
+    # Get absolute path - works on both macOS and Linux
+    if command -v realpath >/dev/null 2>&1; then
+        script_path=$(realpath "$0")
+    elif [ -x "$0" ]; then
+        # If $0 is executable, get its directory and name
+        script_dir=$(cd "$(dirname "$0")" && pwd)
+        script_name=$(basename "$0")
+        script_path="$script_dir/$script_name"
     fi
 
-    chmod +x "$bin_dir/mufizup" || {
-        print_warning "Failed to set executable permissions for mufizup"
-    }
+    # Check if source and destination are the same file
+    if [ "$script_path" = "$target_path" ]; then
+        print_success "mufizup manager already installed"
+    else
+        if ! cp "$script_path" "$target_path"; then
+            print_error "Failed to install mufizup manager"
+            # Don't exit here as main binary is installed
+            print_warning "MufiZ installed but mufizup manager installation failed"
+            return 0
+        fi
+        chmod +x "$target_path" || {
+            print_warning "Failed to set executable permissions for mufizup"
+        }
+        print_success "mufizup manager installed"
+    fi
 
-    print_success "MufiZ v${version} and mufizup installed successfully"
+    print_success "MufiZ v${version} installation completed"
 }
 
 remove_mufiz() {
